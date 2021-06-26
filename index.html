@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My PDF Viewer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+ 
+</head>
+<body class="body">
+
+<img align="right" class="first image"  src="laptop.jpg" ></img>
+<img class="first arrow" src="down-arrow.png"></img>
+<h1 class="first text">Click here</h1>
+
+<h1 class="second text">Enter PDF file name</h1>
+<input class="second input" type="text" value="">
+
+<button class="second submit">Submit</button>
+
+    <div class="outer-container">
+      <div id="my_pdf_viewer">
+        <div id="canvas_container">
+            <canvas id="pdf_renderer"></canvas>
+        </div>
+ 
+        <div id="navigation_controls">
+            <button class="third-btn" id="go_previous">Previous</button>
+            <input class="third-input" id="current_page" value="1" type="number"/>
+            <button class="third-btn" id="go_next">Next</button>
+        </div>
+          <div>
+            <button id="convert">Convert</button>
+            <button id="restore">Restore previous</button>
+          </div>
+        
+    </div>
+
+    <div class="container">
+      <div class="loader"></div>
+      <textarea class="output"></textarea>
+    </div>
+    </div>
+    <button class="change">Add</button>
+    <script
+    src="http://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
+  </script>
+    <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+ <script src="script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(12,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2380F'/%3E%3Cstop offset='1' stop-color='%23f40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='35' height='35' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='17.5' cy='17.5' r='17.5'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.6'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+.image{
+    height:300px;
+    width:300px;
+    display: none;
+    position:relative;
+    border:10px solid blueviolet;
+    z-index:-1;
+    margin-top: 30px;
+}
+.arrow{
+    height:70px;
+    width:50px;
+    margin-left:500px;
+    z-index: 1;
+    display: none;
+    position: relative;
+}
+.first.text{
+    margin-left:500px;
+    z-index: 1;
+    position: fixed;
+    top:70px;
+    display: none;
+    color: hotpink;
+}
+.second-bg{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2380F'/%3E%3Cstop offset='1' stop-color='%23f40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='4' height='4' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='2' cy='2' r='2'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.2'/%3E%3C/svg%3E");
+}
+.second.text{
+    color: brown;
+    text-align: center;
+    font-size: 50px;
+    display: none;
+    margin-top: 30px;
+}
+.second.input{
+    display: none;
+    margin-left:480px;
+    margin-top:60px;
+    width:20vw;
+    height:10vh;
+    border:4p   x solid blue;
+    border-radius: 20px;
+    margin-right: 10px;
+    color: rgb(16, 128, 16);
+    font-size: 30px;
+    text-align: center;
+}
+.second.submit{
+    background-color: yellow;
+    color: blue;
+    height:50px;
+    width:100px;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+    border :6px solid grey
+}
+#canvas_container {
+    width: 600px;
+    height: 450px;
+    overflow: auto;
+    background: #333;
+    text-align: center;
+    border: solid 3px;
+    margin-left:15px;
+}
+
+#my_pdf_viewer{
+    display: none;
+    margin-top:5vh
+   
+}
+#convert,#restore{
+    margin-left: 30vw;
+    height:40px;
+    background-color: lightgoldenrodyellow;
+    color:darkgreen;
+    cursor: pointer;   
+}
+.container{
+    margin-left: 6vw;
+    margin-top:6vh;
+    background-color: grey;
+    width:40vw;
+    height:74vh;
+    border:8px solid rgb(88, 41, 41);
+    display: none;
+}
+.output{
+     display: none;
+     font-size: 20px;
+     padding: 10px;
+     color: yellow;
+     line-height: 1.5;
+     width:100%;
+     height: 100%;
+     position: relative;
+     background-color: grey;
+
+}
+.outer-container{
+    display: flex;
+}
+.third-btn{ 
+    height:40px;
+    background-color: lightgoldenrodyellow;
+    color:darkgreen;
+    cursor: pointer; 
+    margin-left: 10px;
+    width: 10%
+}
+.third-input{
+    border:2px solid blue;
+    height:20px;
+    text-align: center;
+}
+
+.loader{
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    display: none;
+   margin: 40px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .third-bg{
+    background-color: #330055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%233a015d' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23410165' cx='50' cy='100' r='50'/%3E%3Cg fill='%2348026e' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23500376' cx='50' cy='200' r='50'/%3E%3Cg fill='%2357047e' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f0587' cx='50' cy='300' r='50'/%3E%3Cg fill='%2367068f' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0798' cx='50' cy='400' r='50'/%3E%3Cg fill='%237707a0' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%238008a9' cx='50' cy='500' r='50'/%3E%3Cg fill='%238909b1' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%239109ba' cx='50' cy='600' r='50'/%3E%3Cg fill='%239a09c3' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a309cb' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ad09d4' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b608dc' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c007e5' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c905ee' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d303f6' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23D0F' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
+  }
+  .change{
+      cursor: pointer;
+      width:60px;
+      height:40px;
+      background-color:darkseagreen;
+      color:floralwhite;
+      margin-left:80vw;
+      bottom:25px;
+      position: relative;
+      display: none;
+  }
+  #restore{
+      margin-left:40px
+  }
