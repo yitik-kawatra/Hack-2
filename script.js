@@ -45,15 +45,6 @@ $('.second.submit').click(function(){
         $('.body').addClass('third-bg');
         $('.change').show(200);
     })
-   
-})
-let  myState = {
-    pdf: null,
-    currentPage: 1,
-    zoom: 1.25
-}
-
-$('.second.submit').click(function(){
     if(filename==""){
         alert('Please enter correct filename');
         return;
@@ -64,9 +55,13 @@ $('.second.submit').click(function(){
         render();
     
     });
+   
 })
-
-
+let  myState = {
+    pdf: null,
+    currentPage: 1,
+    zoom: 1.25
+}
 
 let canvas;
 let no=1;
@@ -92,6 +87,7 @@ function render() {
    no++;
 }
 function restored(){
+    $('.output').val("");
     $('.output').hide();
     let ctext="";
     let localdata=JSON.parse(localStorage.getItem('pdfs'));
@@ -100,9 +96,9 @@ function restored(){
 
         if(localdata[myState.pdf][myState.currentPage]){
             ctext=localdata[myState.pdf][myState.currentPage];
-            $('.output').text("");
+            $('.output').val("");
             $('.output').show();
-            $('.output').text(ctext);
+            $('.output').val(ctext);
         }
     }
 }
@@ -127,10 +123,11 @@ let fullQuality;
 let cpdf;
 let cpage;
 $('#convert').click(function(){
+    $('.output').val("");
     $('.output').hide();
     cpdf=myState.pdf;
     cpage=myState.currentPage;
-    $('.output').text("");
+    
     let loader=$('.loader')[0];
     fullQuality = canvas.toDataURL('image/jpeg', 1.0);
     $('.container').append(loader);
@@ -142,7 +139,9 @@ $('#convert').click(function(){
       ).then(({ data: { text } }) => {
           $('.loader').css("display","none");
         $('.output').show(200);
-        $('.output').text(text);
+        console.log(text);
+        $('.output').val("");
+        $('.output').val(text);
         $('.change').show(200)
       })
       
