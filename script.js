@@ -59,7 +59,7 @@ $('.second.submit').click(function(){
         return;
     }
     
-    pdfjsLib.getDocument(filename+'.pdf').then((pdf) => {
+    pdfjsLib.getDocument('./pdf/'+filename+'.pdf').then((pdf) => {
         myState.pdf = pdf;
         render();
     
